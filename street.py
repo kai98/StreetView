@@ -3,14 +3,6 @@ import streamlit as st
 from PIL import Image
 from numpy import arctan2, sin, cos, degrees
 
-# import matplotlib.pyplot as plt
-# from PIL import Image
-# from numpy import arctan2,sin,cos,degrees
-# import numpy as np
-# import pandas as pd
-# import matplotlib.pyplot as plt
-
-
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 class street_views():
     '''
@@ -123,7 +115,7 @@ class street_views():
 
 
 
-st.title('Street View Image API Visualization')
+st.title('Street View Image')
 
 # Initialization
 KEY = st.text_input('Google Street View API KEY')
