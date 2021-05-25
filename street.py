@@ -118,6 +118,7 @@ class street_views():
 st.title('Street View Image')
 
 # Initialization
+
 KEY = st.sidebar.text_input('Google Street View API KEY',  type='password')
 streetview = street_views(KEY)
 
@@ -128,7 +129,12 @@ numLong = st.sidebar.number_input('Long', value=-76.50318614115257)
 heading = st.sidebar.slider('Heading', min_value=0, max_value=360, value=186)
 fov = st.sidebar.slider('FOV', min_value=0, max_value=150, value=20)
 
-if st.checkbox('Live update') or st.button('Grab That Image'):
+cols =  st.beta_columns(2)
+
+live_update = cols[1].checkbox('Live update')
+manual_update = cols[0].button('Grab That Image!!!')
+
+if live_update or manual_update:
     streetview = street_views(KEY, fov=80, heading=30, radius=100, source='default')
     # img, meta = streetview(42.44, -76.50, heading=186, fov=20)
     img, meta = streetview(numLat, numLong, heading=heading, fov=fov)
