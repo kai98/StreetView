@@ -128,7 +128,7 @@ numLong = st.sidebar.number_input('Long', value=-76.50318614115257)
 heading = st.sidebar.slider('Heading', min_value=0, max_value=360, value=186)
 fov = st.sidebar.slider('FOV', min_value=0, max_value=150, value=20)
 
-if st.checkbox('Live update') or st.button('Request'):
+if st.checkbox('Live update') or st.button('Grab That Image'):
     streetview = street_views(KEY, fov=80, heading=30, radius=100, source='default')
     # img, meta = streetview(42.44, -76.50, heading=186, fov=20)
     img, meta = streetview(numLat, numLong, heading=heading, fov=fov)
