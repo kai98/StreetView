@@ -118,7 +118,7 @@ class street_views():
 st.title('Street View Image')
 
 # Initialization
-KEY = st.text_input('Google Street View API KEY',  type='password')
+KEY = st.sidebar.text_input('Google Street View API KEY',  type='password')
 streetview = street_views(KEY)
 
 numLat = st.sidebar.number_input('Lat', value=42.43849650076074)
